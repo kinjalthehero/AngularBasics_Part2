@@ -1,0 +1,12 @@
+<div class="address-card-class">
+    <p class="name-class">{{ userObj.name }}</p>
+    <button *ngIf=isAvailableVar (click)=isAvailable()> Disable</button>
+    <button *ngIf=!isAvailableVar (click)=isAvailable()> Enable</button>
+    <div *ngIf=isAvailableVar>
+        <p class="designation-class">{{ userObj.designation}}</p>
+        <p class="address-class">{{ userObj.address}}</p>
+        <div *ngIf = 'userObj.phone.length' class="phone">
+            <p *ngFor='let item of userObj.phone'> {{ item }}</p>        
+        </div>
+    </div>
+</div>
